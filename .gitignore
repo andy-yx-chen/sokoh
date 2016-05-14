@@ -1,0 +1,12 @@
+Debug/
+Release/
+ReleaseToAzure/
+ipch/
+packages/
+*.opensdf
+*.sdf
+*.suo
+*.user
+*.o
+*~
+sparta.fcgi

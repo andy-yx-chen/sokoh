@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <title>File Manager</title>
+        <style type="text/css">
+            body {{
+                font-size: 12pt;
+                padding: 12pt 20pt 0 20pt;
+            }}
+        </style>
+    </head>
+    <body>
+		{if $error eq ""}
+			<div>Create a folder</div>
+			<form method="POST" action="/filemgr.html" enctype="application/x-www-form-urlencoded">
+				<div>Folder Name: <input type="text" name="name" size="10" value="" /> <input type="hidden" name="cmd" value="mkdir" /> <input type="submit" value="Create" /></div>
+			</form>
+			<br />
+			<br />
+			<div>Upload a file </div>
+			<form method="POST" action="/filemgr.html" enctype="multipart/form-data">
+				<div>Target Folder:</div>
+				<div>
+					<select name="dest">
+						<option value="">Root</option>
+						{foreach $item in $dirs}
+						<option value="{$item}">{$item}</option>
+						{/foreach}
+					</select>
+				</div>
+				<div>File:</div>
+				<div><input type="file" name="file" /></div>
+				<div>If it's an image, do you want to resize it? <input type="checkbox" value="yes" name="resize" /></div>
+				<div>If want to resize, what is the target size you want to have?<br />
+				  Width: <input type="input" name="width" value="" /> <br />
+				  Height: <input type="input" name="height" value="" />
+				</div>
+				<div><input type="hidden" name="cmd" value="upload" /><input type="submit" value="Upload" /></div>
+			</form>
+		{else}
+			<h3>{$error}</h3>
+			<a href="/filemgr.html">Back &gt; &gt;</a>
+		{/if}
+    </body>
+</html>

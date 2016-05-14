@@ -1,0 +1,36 @@
+CREATE TABLE topic(
+id INTEGER AUTO_INCREMENT PRIMARY KEY, 
+title VARCHAR(200) CHARACTER SET 'utf8' COLLATE 'utf8_general_ci', 
+launched_time VARCHAR(50), 
+description TEXT CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'
+);
+
+CREATE TABLE article(
+id INTEGER AUTO_INCREMENT PRIMARY KEY, 
+topic_id INTEGER REFERENCES topic(id), 
+title VARCHAR(200) CHARACTER SET 'utf8' COLLATE 'utf8_general_ci', 
+author VARCHAR(50) CHARACTER SET 'utf8' COLLATE 'utf8_general_ci', 
+published_time VARCHAR(50), 
+content TEXT CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'
+);
+
+CREATE TABLE comment(
+id INTEGER AUTO_INCREMENT PRIMARY KEY, 
+article_id INTEGER REFERENCES article(id), 
+time_ VARCHAR(50), 
+title VARCHAR(200) CHARACTER SET 'utf8' COLLATE 'utf8_general_ci',
+author VARCHAR(50) CHARACTER SET 'utf8' COLLATE 'utf8_general_ci', 
+content TEXT CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'
+);
+
+CREATE TABLE author(
+id INTEGER AUTO_INCREMENT PRIMARY KEY, 
+alias VARCHAR(50),
+email VARCHAR(200),
+code VARCHAR(200),
+first_name VARCHAR(100) CHARACTER SET 'utf8' COLLATE 'utf8_general_ci',
+last_name VARCHAR(100) CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'
+);
+
+CREATE INDEX IDX_ARTICLE_TOPIC_ID ON article(topic_id);
+CREATE INDEX IDX_COMMENT_ARTICLE_ID ON comment(article_id);

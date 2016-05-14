@@ -1,0 +1,59 @@
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+
+body {
+    font-size: 12pt;
+    padding: 8pt 40pt 0 40pt;
+    font-family: 'Slabo 27px', serif;
+    background-color:#d7d7d7;
+    color:#575757;
+}
+.mainBoard{
+    background-color:#ffffff;
+}
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    width:98%;
+    margin:4pt 1% 6pt 1%;
+}
+hr.banner {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(255, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    width:100%;
+    margin:0 0 18pt 0;
+}
+.logo {
+    padding:12pt 0 6pt 12pt;
+}
+a{
+    text-decoration:none;
+    color:#d23b00;
+}
+a:hover{
+    background-color:#d23b00;
+    color:#fff;
+}
+.title{
+    color:#a93406;
+    font-size:16pt;
+    line-height:20pt;
+    margin-left:2%;
+    font-weight:bold;
+}
+.content{
+    line-height:16pt;
+    padding:0 12pt 20pt 12pt;
+}
+.footer{
+    line-height:18pt;
+    color:#c1c1c1;
+    text-align:center;
+}
+.lineItem{
+    line-height:30pt;
+    padding-left:14pt;
+}

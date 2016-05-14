@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta name="keywords" content="big data, stream processing, data storage, stream storage" />
+        <meta name="description" content="We focus on how to deal with big data, big data stream processing and data storage as well as stream storage using new technologies not just map-reduce/key-value storage" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="/style/main.css">
+        <title>{$article.title} - big data, stream processing, stream storage, data storage</title>
+    </head>
+    <body>
+        <div class="mainBoard">
+            <div class="logo">
+                <a href="/" title="big data stream processing and data storage as well as stream storage using new technologies not just map-reduce/key-value storage">
+                    <img src="/images/logo.png" alt="data-technology.net, big data stream processing and data storage as well as stream storage using new technologies not just map-reduce/key-value storage" />
+                </a>
+            </div>
+            <hr class="banner" align="center" />
+            
+            <div style="margin-top:16pt">
+                <div class="title">
+                    {$article.title}
+                </div>
+                <hr align="center"/>
+                <div class="lineItem">By {$article.author}, on {$article.published_time}</div>
+                <div class="content">{$article.content}</div>
+            </div>
+            <div style="line-height: 20pt; font-weight:bold;padding-left:12pt;"><a href="{$article.topic_id}.html">&lt;&lt;Go Back</a></div>
+            <div class="title">Comment List</div>
+            <hr align="center" />
+            <div style="line-height: 18pt;">
+                {foreach $comment in $comments}
+                <div class="content">
+                    <div><b>{$comment.title} | by {$comment.author} at {$comment.time}</b></div>
+                    <div style="margin-top: 4pt;">{$comment.content}</div>
+                </div>
+                {/foreach}
+            </div>
+            <div style="line-height: 18pt;padding-left:12pt;">
+                <form action="a_{$article.id}.html" method="POST" enctype="application/x-www-form-urlencoded" style="padding:0;margin: 0">
+                    <table style="border:0px; width: 96%;font-size:12pt;">
+                        <tr>
+                            <td style="width: 100px;">Name:</td>
+                            <td><input type="text" name="visitor" size="20"/> *You can leave your email here if you want to be touched.</td>
+                        </tr>
+                        <tr>
+                            <td>Title:</td>
+                            <td><input type="text" name="title" value="RE: {$article.title}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Comment:</td>
+                            <td><textarea name="content" cols="40" rows="6"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>Puzzle:</td>
+                            <td><img src="{$puzzle}" alt="Puzzle" /><input type="text" name="answer" size="8"/> *Please answer the puzzle.</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp; <input type="hidden" name="puzzle" value="{$answer}" /></td>
+                            <td><input type="submit" value="Done"/></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <hr align="center" />
+            <div class="footer">
+                Copyright (c) Data Technology Co. Ltd., All rights reserved. <br />
+                Contact: <a href="mailto:andy.chen@data-technology.net">Andy Chen</a>
+            </div>
+        </div>
+    </body>
+</html>

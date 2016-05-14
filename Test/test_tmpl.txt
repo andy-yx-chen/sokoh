@@ -1,0 +1,1 @@
+{{}}leading{$title}{if $number gt "100"}true{else}false{/if}{foreach $item in $items}{if $item ge "150"}{$item}a{else}{$item}{/if}{/foreach}ending.{$blog.title}+{$blog.author}+{$blog.content}

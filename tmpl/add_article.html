@@ -1,0 +1,54 @@
+﻿<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <title>Add a new article</title>
+		<script type="text/javascript" src="scripts/jquery-1.3.2.js"></script>
+		<script type="text/javascript" src="scripts/jquery-ui-1.7.2.custom.min.js"></script>
+		<link rel="Stylesheet" type="text/css" href="style/jqueryui/ui-lightness/jquery-ui-1.7.2.custom.css" />
+		<script type="text/javascript" src="scripts/jHtmlArea-0.8.js"></script>
+		<link rel="Stylesheet" type="text/css" href="style/jHtmlArea.css" />
+		<style type="text/css">
+			div.jHtmlArea .ToolBar ul li a.custom_disk_button 
+			{{
+				background: url(images/disk.png) no-repeat;
+				background-position: 0 0;
+			}}
+			
+			div.jHtmlArea {{ border: solid 1px #ccc; }}
+		</style>
+    </head>
+    <body style="font-size:9pt;">
+		<script type="text/javascript">    
+        $(function() {{
+            $("#txtDefaultHtmlArea").htmlarea();
+        }});
+		</script>
+        <form enctype="application/x-www-form-urlencoded" method="POST" action="">
+            <table style="border:0; width:80%;">
+				<tr>
+                    <td style="width:40px;">Title: </td>
+                    <td><input name="title" type="text" size="50"/></td>
+                </tr>
+                <tr>
+                    <td>Topic: </td>
+                    <td>
+                        <select id="topic_selector" name="topic_id" onchange="$('form').attr('action', $('#topic_selector').val() + '.html');">
+                            <option value="0">-Select-</option>
+                            {foreach $topic in $topics}
+                            <option value="{$topic.id}">{$topic.title}</option>
+                            {/foreach}
+                        </select>
+					</td>
+                </tr>
+                <tr>
+                    <td>Content:</td>
+                    <td><textarea id="txtDefaultHtmlArea" name="content" rows="40" cols="100"></textarea></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><input type="submit" value="Add"/></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

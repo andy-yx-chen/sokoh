@@ -1,0 +1,22 @@
+<html>
+<head>
+    <meta name="GENERATOR" content="Microsoft Visual Studio">
+    <title>{$title}</title>
+</head>
+<body>
+    <p>
+        This is a sample
+        {if $number gt "123" }
+        Number is 123
+        {else}
+        Number is not 123
+        {/if}
+        
+        <ul>
+            {foreach $item in $items}
+            <li>{if $item ge "100"}<b>{$item}</b>{else}{$item}{/if}</li>
+            {/foreach}
+        </ul>
+    </p>
+</body>
+</html>
