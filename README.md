@@ -10,7 +10,7 @@ Sokoh only supports Linux and requires the followings to install to build:
  * Mysqlcppconn
 
 After these, run 
-> make sokoh.fcgi
+> make all
 
 > make install
 
